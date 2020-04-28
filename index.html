@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src ="js/circle-progress.js"></script>
+    <script src ="js/scrolla.jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+
+<script>
+
+$(document).on('click', 'a[href="#"]', function(e){
+    e.preventDefault();
+});
+
+
+jQuery(window).scroll(function(){
+var scrollTop = jQuery(document).scrollTop();
+console.log(scrollTop);    
+
+    $(function() {
+        $('.circle').circleProgress({
+            value: 0.75,
+            size: 150,
+            startAngle: -1.5,
+            fill: "#7C4FB8"
+            // fill: {
+            // gradient: ["#7C4FB8", "#BD4B84"]
+            //      }  
+        });     
+    });
+});
+
+$(function(){
+    $('.animate').scrolla({
+        mobile: false,
+        once: false
+    });
+});
+</script>
+
+
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="header_inner">
+                <h1><a href="#">JEONGHEE</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+<!-- main -->
+        <section class="main">
+            <div class="intro">
+                <strong>CREATIVE</strong>
+                <div class="intro_text">
+                    <span> MY STORY IS ... </span>
+                    <p>CREATIVE DESIGNER<br>
+                        AND PUBLISHER</p>
+                </div>
+            </div>
+        </section>    
+        <section class="about">
+            <div class="about_text">
+                <p>Don't just </br>
+                   dream it, be it!</p>
+            </div>
+            <h2><img src="images/JH.jpg" alt="사진"></h2>
+            <div class="info">
+                <dl>
+                    <dt>Name</dt>
+                    <dd>LEE JEONG HEE</dd>
+                    <dt>Residence</dt>
+                    <dd>Seoul Korea</dd>
+                    <dt>Major </dt>
+                    <dd>Web Design / Publishing</dd>
+                    <dt>Skills</dt>
+                    <dd>Photoshp, Illustrator, Xhtml, Html5, CSS3, Javascript, jQuery,bxslider , Vue</dd>
+                </dl>
+            </article>
+            <article class="skills">
+                <!-- <h2>skills</h2> -->
+                <ul>
+                    <li>
+                        <div class="circle"><span>90%</span></div> 
+                        <span>Photoshop</span>
+                    </li>
+                    <li>
+                        <div class="circle"><span>85%</span></div> 
+                        <span>llustrator</span>
+                    </li>
+                    <li>
+                        <div class="circle"><span>90%</span></div> 
+                        <span>Html/Css</span>
+                    </li>
+                    <li>
+                        <div class="circle"><span>70%</span></div>
+                        <span>Javascript / jQuery_bxSlider / Vue</span>
+                    </li> 
+                </ul>
+            </article>
+        </section>
+        <section class="portfolio">
+            <div class="pf_inner">
+                <div class="pf projects01">
+                    <h2 class= "animate" data-animate="fadeInLeft" data-duration="1s" data-delay="0" data-offset="100">Personal Projects</h2>
+                    <p class= "animate" data-animate="fadeInRight" data-duration="1s" data-delay="0s" data-offset="100">
+                        웹 접근성에 준수하여 웹사이트 페이지를 <br/>
+                        (html, css, 바닐라javascript, jquery, vue)등을 활용하여 <br/> 
+                        코딩하여 포트폴리오를 제작하였습니다</p>
+                    <ul class="animate" data-animate="fadeInUp" data-duration="1s" data-delay=".0s">    
+                        <li>
+                            <a href="work/kakao_bank/ka_main.html">
+                            <img src="images/kakaobank_pc.png" alt="Personal Projects05"/>
+                            </a>
+                            <dl>
+                                <dt>kakao_bank site coding</dt>
+                                <dd>html/css, javascript, bx-slider</dd>
+                            </dl>
+                            <a href="work/kakao_bank/ka_main.html">
+                                <div class="over">
+                                    <span>SITE CODING</span>
+                                    <h3>KAKAO_BANK</h3> 
+                                    <p>PC용 브라우저 화면에 최적화된 사이트입니다.
+                                        바닐라 Javascript와 bx-slider를 이용해 동적인 기능들을 구현했습니다.</p>
+                                </div>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="work/good_people/main.html">
+                            <img src="images/good_pc.png" alt="Personal Projects06"/>
+                            </a>
+                            <dl>
+                                <dt>Goodpeople site coding</dt>
+                                <dd>html/css, javascript, jQuery</dd>
+                            </dl>
+                            <a href="work/good_people/main.html">
+                                <div class="over">
+                                    <span>SITE CODING</span>
+                                    <h3>GOOD_PEOPLE</h3> 
+                                    <p>웹접근성을 준수한 사이트이며  PC, Tablet, Mobile 등 다양한 디바이스에
+                                        최적화된 반응형으로 구현했습니다.</p>
+                                </div>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="work/mcs/main.html">
+                            <img src="images/mcs_pc.png" alt="Personal Projects07"/>
+                            </a>
+                            <dl>
+                                <dt>한전 mcs site coding</dt>
+                                <dd>html/css, javascript, jQuery</dd>
+                            </dl>
+                            <a href="work/mcs/main.html">
+                                <div class="over">
+                                    <span>SITE CODING</span>
+                                    <h3>한전엠씨에스</h3> 
+                                    <p>웹접근성을 준수한 사이트이며  PC, Tablet, Mobile 등 다양한 디바이스에
+                                        최적화된 반응형으로 구현했습니다.</p>
+                                </div> 
+                            </a>
+                                
+                        </li>
+                        <li>
+                            <a href="work/ystudio/index.html">
+                            <img src="images/ystdio_pc.png" alt="Personal Projects08"/>
+                            </a>
+                            <dl>
+                                <dt>Ystudio site coding</dt>
+                                <dd>html/css, javascript, jQuery</dd>
+                            </dl>
+                            <a href="work/ystudio/index.html">
+                                <div class="over">
+                                    <span>SITE CODING</span>
+                                    <h3>YSTUDIO</h3> 
+                                    <p>웹접근성을 준수한 사이트이며  PC, Tablet, Mobile 등 다양한 디바이스에
+                                        최적화된 반응형으로 구현했습니다.</p>
+                                </div>
+                            </a>
+                                
+                        </li>
+                    </ul>
+
+                    <p class= "animate" data-animate="fadeInRight" data-duration="1s" data-delay="0s" data-offset="100">디자인및 코딩을 하였으며 html, css, javascript, jquery등을 활용한 <br/>
+                        포트폴리오를 제작하였습니다</p>    
+                    <ul class="animate" data-animate="fadeInUp" data-duration="1s" data-delay=".3s">
+                        <li>
+                            <a href="work/Voluspa/index.html">
+                                <img src="images/voluspa.png" alt="Personal Projects01"/>
+                            </a>
+                            <dl>
+                                <dt>Voluspa intro Design & coding</dt>
+                                <dd>Photoshop, html/css, javascript, jQuery</dd>
+                            </dl>
+                            <a href="work/Voluspa/index.html" class="de_co">
+                                <span>D&middot;E&middot;S&middot;I&middot;G&middot;N <br/>
+                                    & C&middot;O&middot;D&middot;D&middot;I&middot;N&middot;G</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="work/Lecreuset/main.html">
+                            <img src="images/recu_00.png" alt="Personal Projects02"/>
+                            </a>
+                            <dl>
+                                <dt>Lecreuset site Design & coding</dt>
+                                <dd>Photoshop, html/css, javascript,jQuery</dd>
+                            </dl>
+                            <a href="work/Lecreuset/main.html" class="de_co">
+                                <span>D&middot;E&middot;S&middot;I&middot;G&middot;N <br/>
+                                    & C&middot;O&middot;D&middot;I&middot;N&middot;G</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="work/Lush_mobile/index.html">
+                            <img src="images/lush.jpg" alt="Personal Projects03"/>
+                            </a>
+                            <dl>
+                                <dt>Voluspa intro Design & coding</dt>
+                                <dd>Photoshop, html/css, jQuery</dd>
+                            </dl>
+                            <a href="work/Lush_mobile/index.html" class="de_co">
+                                <span>D&middot;E&middot;S&middot;I&middot;G&middot;N <br/>
+                                    & C&middot;O&middot;D&middot;I&middot;N&middot;G</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="work/Alice/intro.html">
+                            <img src="images/alice.png" alt="Personal Projects04"/>
+                            </a>
+                            <dl>
+                                <dt>Alice intro Design & coding</dt>
+                                <dd>Photoshop, html/css, javascript, jQuery</dd>
+                            </dl>
+                            <a href="work/Alice/intro.html" class="de_co">
+                                <span>D&middot;E&middot;S&middot;I&middot;G&middot;N <br/>
+                                    & C&middot;O&middot;D&middot;I&middot;N&middot;G</span>
+                            </a>
+                        </li>
+                    </ul>    
+                </div>
+                <div class="pf projects02" >
+                    <h2 class= "animate" data-animate="fadeInLeft" data-duration="1s" data-delay="0s" data-offset="100">Executive ability</br>
+                        Projects 
+                    </h2>
+                    <p class= "animate" data-animate="fadeInRight" data-duration="1s" data-delay="0s" data-offset="100">웹 표준성을 근거한 웹 페이지디자인 , 상세페이지 기획 디자인,<br/>
+                         명함디자인, 서버생성 및 코딩수정을 하였습니다. </p>
+                    <ul class="animate" data-animate="fadeInUp" data-duration="1s" data-delay=".3s">
+                        <li>
+                            <a href="pdf/nuts01.pdf">
+                            <img src='images/work01.jpg' alt='Web Design 01'/></a>
+                            <dl>
+                                <dt>Detail page Design</dt>
+                                <dd>llustrator,Photoshop</dd>
+                            </dl>
+                            <a href="#" class="over">
+                                <span>상세페이지 D&middot;E&middot;S&middot;I&middot;G&middot;N</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pdf/nuts02.pdf">
+                            <img src='images/work02.jpg' alt='Web Design 02'/></a>
+                            <dl>
+                                <dt>Intro page Design</dt>
+                                <dd>llustrator,Photoshop</dd>
+                            </dl>
+                            <a href="#" class="over">
+                                <span>인트로 / 이벤트 D&middot;E&middot;S&middot;I&middot;G&middot;N</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pdf/business_pf.pdf">
+                            <img src='images/work03.jpg' alt='Web Design 03'/></a>
+                            <dl>
+                                <dt>business card Design</dt>
+                                <dd>llustrator,Photoshop</dd>
+                            </dl>    
+                            <a href="#" class="over">
+                                <span>명함 D&middot;E&middot;S&middot;I&middot;G&middot;N</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pdf/web_pf.pdf">
+                            <img src='images/work03.png' alt='Web Design 04'/></a>
+                            <dl>
+                                <dt>Web Design</dt>
+                                <dd>llustrator,Photoshop</dd>
+                            </dl>
+                            <a href="#" class="over">
+                                <span>Web D&middot;E&middot;S&middot;I&middot;G&middot;N</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>  
+        </section>
+        <div class="contact">
+            <section class="contact_inner">
+                <!-- <img src="images/main_jh.png" alt="backgroundJH"/> -->
+                <form  action="#" method="post" > 
+                    <fieldset>
+                        <legend class="hideClass">나에게 메일 보내기</legend>
+                        <ul>
+                            <li>
+                                <label for="userName">name</label>
+                                <input type="text" id="userName" required placeholder="name">
+                            </li>
+                            <li>
+                                <label for="userEmail">Email</label>
+                                <input type="email" id="userEmail" required placeholder="Email">
+                            </li>
+                            <li>
+                                <label for="userPhone">Phone</label>
+                                <input type="tel" id="userPhone" required placeholder="Phone">
+                            </li>
+                            <li>
+                                <label for="userMessage">Message</label>
+                                <textarea id="userMessage"  rows="4">Message</textarea>
+                            </li>
+                            <li>
+                                <input type="submit" value="submit">
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form>
+             </section>
+        </div>
+        <footer>
+            <div class="inner">
+                <ul>
+                    <li>A: 서울 성북구 동선동</li>
+                    <li>T: 010.9832.7981</li>
+                    <li>E: maryhalady@naver.com</li>
+                </ul>
+                <span>Copyright (c) 2020 my portfolio all 이정희</span>
+            </div>
+        </footer>
+    </div>
+    <!-- <script>
+        let html = document.querySelector('html');
+        let cirCle = document.querySelector('.skills')
+
+        window.addEventListener('scroll', event);
+        
+            function event(){
+                console.log(html.scrollTop);
+
+                if(html.scrollTop  > 780){
+                    cirCle.classList.add('circle');
+                }
+                if(html.scrollTop < 700){
+                    cirCle.classList.remove('circle');
+                }
+                
+            }
+    </script> -->
+</body>
+</html>
