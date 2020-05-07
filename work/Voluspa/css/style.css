@@ -1,0 +1,74 @@
+@charset "utf-8";
+.hideClass{width:0; height:0; font-size:0; line-height: 0;
+            position:absolute; visibility: hidden;}
+
+body{background:green;
+		 height:100%;}
+header{position:fixed; 
+		left:55px; top:40px;
+		z-index:100;}
+header>h1>a{font:60px/60px Gungsuh,sans-serif;
+				       color:#fff;
+					   text-shadow:3px 3px 1px #999;}
+nav{position:fixed;
+	left:0; top:43%;
+	width:250px;
+	margin-top:-120px;
+	z-index:900;}		
+nav>ul{}
+nav>ul>li{border-top:2px solid #fff;}
+nav>ul>li>a{display:block;
+			height:47px;
+			font:16px/47px 'Righteous', cursive;
+			color:#fff;
+			text-align:right;
+			transition:all 0.3s ease-out;} 
+nav>ul>li>a:hover{color:#ff00cc;
+				font-size:18px;}			
+			
+section{width:100%;
+		background:no-repeat right center fixed;
+		background-size:cover;
+		position:relative;
+		overflow:hidden;}			
+section#menu01{background-image:url(../img/voluspa01.png);}
+section#menu02{background-image:url(../img/voluspa02.png);}
+section#menu03{background-image:url(../img/voluspa03.png);}
+section#menu04{background-image:url(../img/voluspa04.png);}	
+section>h1{position:absolute;
+			left:60px; bottom:230px;
+			font:22px CentSchbook BT, sans-serif;
+			color:#ff00cc;}
+section>p{position:absolute;
+			left:130px; bottom:125px;
+			margin-top:53px;
+			width:386px;
+			font:20px Vijaya, sans-serif;
+			color:#fff;
+			text-align:justify;}
+section>img{position:absolute;
+			z-index:400;}	
+section>img.p11{right:97px; top:30px;}
+section>img.p12{left:450px; top:70px;}
+section>img.p13{left:380px; bottom:200px;}
+section>img.p14{right:300px; bottom:100px;}
+section>img.p15{right:100px; bottom:50px;}
+section>img.p16{left:550px; bottom:40px;}
+
+section>img.p21{right:30px; top:20px;}
+section>img.p22{right:-50px; bottom:-100px;}
+
+section>img.p31{right:-30px; top:100px;}
+section>img.p32{right:250px; top:300px;}
+section>img.p33{left:300px; top:100px;}
+section>img.p34{left:450px; top:200px;}
+section>img.p35{left:400px; bottom:100px;} 
+section>img.p36{right:50px; bottom:100px;} 
+section>img.p37{left:150px; bottom:-150px;} 
+
+section>img.p41{right:100px; top:50px;}
+section>img.p42{right:10px; bottom:10px;}
+section>img.p43{right:-30px; bottom:-20px;}
+
+
+			

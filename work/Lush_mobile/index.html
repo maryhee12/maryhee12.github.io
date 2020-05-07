@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <link rel="stylesheet"    href="css/reset.css"    type="text/css">
+    <link rel="stylesheet"    href="css/main.css"    type="text/css">
+    <link rel="stylesheet" href="css/swiper.min.css" type="text/css">
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/swiper.jquery.umd.min.js"></script>
+<script src="js/main.js"></script>
+
+	
+</head>
+
+<body>
+ <div id="wrap">
+<!-- header -->
+<header>
+ <h1>Lush</h1>
+ <p class="ok"><img src="img/btn/menu_btn.png" alt="메인메뉴로 가기"></p>
+</header>
+
+<!-- nav -->
+<div id="navBack">
+<nav>
+ <h1>Main Menu</h1>
+		<ul>
+			<li><a href="#">Sub Menu01</a></li>
+			<li><a href="#">Sub Menu02</a></li>
+			<li><a href="#">Sub Menu03</a></li>
+			<li><a href="#">Sub Menu04</a></li>
+			<li><a href="#">Sub Menu05</a></li>
+		</ul>
+		<p class="close"><img src="img/btn/close_btn.png" alt="메뉴닫기버튼"></p>
+	</nav>
+ </div>
+ 
+<!-- main-->
+<section id="main">
+ <h1 class="hideClass">주요갤러리</h1>
+ <div id="galleryBack" class="swiper-container">
+  <ul class="swiper-wrapper">
+    <li class="swiper-slide"><img src="img/01.jpg" alt="갤러리1"></li>
+	<li class="swiper-slide"><img src="img/02.jpg" alt="갤러리2"></li>
+	<li class="swiper-slide"><img src="img/03.jpg" alt="갤러리3"></li>
+    <li class="swiper-slide"><img src="img/04.jpg" alt="갤러리4"></li>
+	<li class="swiper-slide"><img src="img/05.jpg" alt="갤러리5"></li>
+	<li class="swiper-slide"><img src="img/06.jpg" alt="갤러리6"></li>
+	<li class="swiper-slide"><img src="img/07.jpg" alt="갤러리7"></li>
+	<li class="swiper-slide"><img src="img/08.jpg" alt="갤러리8"></li> 
+  </ul>
+  	<!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows --> 
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+	
+
+
+  </div>
+</section>
+
+<!--contents  -->
+<section id="contents">
+ <h1 class="hideClass">메인내용</h1>
+ <h2 class="hideClass">탭메뉴바</h2>
+ <ul id="listMain">
+  <li><a href="#">Soap</a></li>
+  <li><a href="#">Cosmetic</a></li>
+  <li><a href="#">Gifts</a></li>
+  <li><a href="#">Body</a></li>
+  <li><a href="#">Kids</a></li>
+  <li><a href="#">Notice</a></li>
+</ul>
+
+ <h2 class="hideClass">탭내용</h2>
+ <ul id="listData" >
+ <!-- no01 -->
+  <li>
+   <dl>
+    <dt>Soap</dt>
+    <dd class="pic"><img src="img/co_01.jpg" alt="리스트이미지01"></dd>
+	<dd class="text">Work this vegetable based bar into a rich lather for skin...</dd>
+	<dd class="link"><a href="#">next</a></dd>
+  </dl></li>
+  
+  <!-- no02 -->
+  <li>
+   <dl>
+    <dt>Cosmetic</dt>
+    <dd class="pic"><img src="img/co_02.jpg" alt="리스트이미지02"></dd>
+	<dd class="text">Swirl all the colors together for a shimmering blush ....</dd>
+	<dd class="link"><a href="#">next</a></dd>
+  </dl></li>
+  
+  <!-- no03 -->
+  <li>
+   <dl>
+    <dt>Gifts</dt>
+    <dd class="pic"><img src="img/co_03.jpg" alt="리스트이미지03"></dd>
+	<dd class="text">Using either the Soap or Shower Gel, lather up using the Bath Lily....</dd>
+	<dd class="link"><a href="#">next</a></dd>
+  </dl></li>
+  
+  <!-- no04 -->
+  <li>
+   <dl>
+    <dt>Body</dt>
+    <dd class="pic"><img src="img/co_04.png" alt="리스트이미지04"></dd>
+	<dd class="text">Our deliciously fruity body butter will melt into your skin...</dd>
+	<dd class="link"><a href="#">next</a></dd>
+  </dl></li>
+
+  
+ </ul>
+</section>
+
+	<nav>
+		<h1>Main Menu</h1>
+		<ul>
+			<li><a href="#">Soap</a></li>
+			<li><a href="#">Cosmetic</a></li>
+			<li><a href="#">Gift</a></li>
+			<li><a href="#">Body</a></li>
+			<li><a href="#">Notice</a></li>
+		</ul>
+		</nav>
+
+<!-- footer -->
+<footer>
+&copy; Copyright jeonghee LushKorea
+</footer>   
+
+</div>
+	<!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: 1500,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
+</body>
+
+</html>

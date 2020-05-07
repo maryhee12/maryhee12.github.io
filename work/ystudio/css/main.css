@@ -1,0 +1,604 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap');
+
+
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+ blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+* {margin: 0; padding: 0;}
+a {color:inherit; text-decoration: inherit;}
+li {list-style: none;}
+address, em, i { font-style: normal;}
+h1, h2, h3, h4, h5,h6 {font-size: inherit; color:#fff;}
+a:hover { text-decoration: none; color:inherit;}
+p, span{color:#fff;}
+
+/* layout */
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+.wrap{
+    width:100%;
+    margin:0 auto;
+}
+
+/* header */
+header{ 
+    position: fixed;
+    width:100%; 
+    z-index: 100;
+    transition: all  0.5s;
+}
+header .innerHeader{
+    position: relative;
+    height: 80px;
+    padding:30px 80px 0 80px;
+}
+header .innerHeader .logo{
+    width:170px;
+    height:60px;
+    float: left;
+    margin-right:180px;
+}
+header .innerHeader .logo > a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height:100%;
+}
+header .innerHeader .logo > a > img{
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+header .innerHeader .logo > a > img:nth-child(2){ 
+    display: none;
+}
+header .innerHeader .headertext{
+    float:left;
+    color:#fff;
+    line-height: 70px;
+}
+header .innerHeader .menuOpen{
+    float:right;
+    margin-top: 20px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color:#fff;
+}
+header .innerHeader .menuOpen > span{
+    display: inline-block;
+    margin-left:15px;
+    font-size: 33px;
+    vertical-align: middle;
+    margin-top: -6px;
+}
+/* fixheader */
+header.on{ 
+    padding:20px 0 0;
+    transition: all 0.5s;
+}
+header::before{
+    content:'';
+    width:100%;
+    height:0;
+    position: absolute;
+    top:0;
+    z-index: -1;
+    background-color: #222;
+    transition: all 0.5s;
+}
+header.on::before{
+    height: 100%;
+    border-bottom: 1px solid #2c2c2c;
+    transition: all 0.3s;
+}
+header.on .innerHeader .logo > a > img:nth-child(2){
+    display: block;
+    transition: all 0.3s;
+}
+
+/* nav gnb */
+.gnb{
+    position: fixed;
+    right:-100%;
+    top:0;
+    padding:60px 300px 70px 100px;
+    box-sizing: border-box;
+    background-color: #000;
+    height:100vh;
+    color:#666;
+    transition:all 0.8s; 
+    /* display:none; */
+}
+.gnb.on{
+    right:0;
+    transition: all 0.8s;
+}
+.gnb > .close{
+    display:block;
+    position: absolute;
+    right:80px;
+    top:70px;
+    font-size:38px;
+    color:#fff;
+}
+.gnb > ul > li > a {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.7;
+}
+.gnb > ul > li > a:hover{
+    color:#fff; 
+    transition: all 0.5s;
+}
+/* main_visual */
+.visual {position: relative;}
+.visual .slide li{ 
+    position: relative;
+    width:100%;
+    height: 100vh;
+    background-color: #222;
+}
+.visual .slide li img{
+    position: absolute;
+    top:0;
+    bottom:0;
+    width:100%;
+}
+.visual .slide li:nth-child(3) img {top: 0;} 
+.visual .slide li .txt{
+    position: absolute;
+    left: 10%;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:18px;
+    color:#fff;
+}
+.visual .slide li .txt > h3{
+    margin:30px 0;
+    font-size:64px;
+} 
+.visual .slide li .txt > a{
+    display:inline-block;
+}
+.visual .slide li .txt > a span{
+    font-size:14px;
+    margin-left:5px;
+}
+.visual .slide li .scroll_btn{
+    display:block;
+    position: absolute;
+    left:50px;
+    bottom:10%;
+    color:#ccc;
+    font-size:12px;
+    transform: rotate(-90deg);
+    font-weight: bold;
+    animation-name:scroll;
+    animation-duration: 0.8s; 
+}
+/* slick 슬라이드 화살표 */
+.slick-arrow{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:60px;
+    height:60px;
+    line-height: 60px;
+    z-index:20;
+    text-indent:-9999px;
+    background:#fff;
+    border:none;
+    cursor:pointer; 
+}
+.slick-arrow::after {
+    content: '<'; 
+    position: absolute; 
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;  
+    color: #888; 
+    font-size: 20px; 
+    text-indent: 0px; 
+    font-weight: 300; 
+    transition: all 0.2s;
+}  
+.slick-arrow.slick-prev {bottom: 60px;}
+.slick-arrow.slick-next:after {content: '>';}
+
+.slick-arrow:hover {
+    background: #ccc;
+}
+.slick-arrow:hover::after {
+    font-size: 20px; 
+    color: #888;
+}
+
+/* 이미지 슬라이드 모션 */
+.slick-active .txt p{
+    animation-name: txtP;
+    animation-duration: 0.8s;
+}
+@keyframes txtP{
+    0%{opacity: 0; transform: rotateX(180deg) translateY(-150px)}
+    20%{opacity: 0; transform: rotateX(180deg) translateY(-150px)}
+    100%{opacity: 1; transform: rotateX(0) translateY(0)}
+}
+.slick-active .txt h3 {
+    animation-name: txtH3; 
+    animation-duration: 0.7s;
+}
+@keyframes txtH3 {
+    0% { transform:  translateX(0)}
+    40% { transform:  translateX(-50px)}
+    100% { transform:  translateX(0)}
+}
+.slick-active .txt a{ 
+    animation-name: txtA; 
+    animation-duration: 0.8s;
+} 
+@keyframes txtA {
+    0% {opacity: 0; transform:rotateX(180deg) translateY (150px)}
+    20% {opacity: 0; transform:rotateX(180deg) translateY (150px)}
+    100% {opacity: 1; transform:rotateX(0) translateY (0)}
+}
+.slick-active .scroll_btn {
+    animation-name: scroll; 
+    animation-duration: 1s;
+}
+@keyframes scroll {
+    0% { opacity: 0; left: -100px;}
+    30% { opacity: 0; left: -100px;}
+    100% { opacity: 1; left: 50px; }
+}
+.slick-active img {
+    animation-name: IMG; 
+    animation-duration: 1s;
+}
+@keyframes IMG {
+    0% { opacity: 0; right:-80px; transform: scale(0.99);}
+    100% { opacity: 1; right: 0px; }
+}
+
+/* contents */
+.contents{
+    padding:120px 0;
+    background-color: #1b1b1b;
+}
+.contents .mainText{
+    position: relative;
+    width:1170px;
+    margin:0 auto;
+    padding-bottom: 60px;
+}
+.contents .mainText::before{
+    content:'';
+    width:100px;
+    height:100px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    left:50px;
+    top:100px;
+    background-color:#FFE000 ;
+}
+.contents .mainText::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.contents .mainText > span{
+    display:block;
+    font-size: 230px;
+    position: absolute;
+    left:0;
+    top:60px;
+}
+.contents .mainText > h3{
+    float:left;
+    font-size:25px;
+    font-weight: bold;
+    line-height: 1.2;
+    width:30%;
+}
+.contents .mainText > p{
+    float:right;
+    width: 70%;
+    font-size:25px;
+    line-height: 1.4;
+}
+.contents .mainText > p > span{
+    margin-top:45px;
+    display: block;
+    font-size:20px;
+    font-weight:400 ;
+    color:#999;
+}
+.contents .mainText > p::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+
+/* contents_ project */
+.project{
+    width:100%;
+    padding: 105px 0 175px;
+}
+.project_top{
+    width:1170px;
+    margin:0 auto;
+    margin-bottom:60px;
+}
+.project_top > h3{
+    float: left;
+    font-size:36px;
+}
+.project_top > a {
+    display:block;
+    float: right;
+    font-size:18px;
+    color:#fff;
+}
+.project_top span{
+    margin-left:5px;
+}
+.project_top::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.project ul {
+    width: 98%;
+    padding:0 1%;
+}
+.project ul::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.project ul > li{
+    position: relative;
+    float:left;
+    width:calc(100%/4);
+    padding:0 10px;
+    box-sizing:border-box;
+}
+.project ul > li img{
+    width:100%;
+    transition: all 0.5s;
+}
+.project ul > li > a{
+    display:block;
+    overflow: hidden;
+}
+.project ul > li > a:hover img{
+    transform:scale(1.2);
+    transition: all 1s;
+}
+.project li > .siteText{
+    background:#1b1b1b;
+    position: absolute;
+    right:0;
+    bottom:0;
+    width:270px;
+    padding:15px;
+    box-sizing:border-box;
+    text-align:right;
+}
+.project li > .siteText > span{
+    font-size:15px;
+    font-weight:400;
+}
+.project li > .siteText > p {
+    font-size:22px;
+}
+
+
+/* contents_partner */
+
+.partner{
+    width:1170px;
+    margin:0 auto;
+    padding:120px 0;
+}
+.partner h3{
+    font-size:17px;
+    font-weight: 400;
+}
+.partner ul::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.partner ul > li{
+    float:left;
+    width:calc(100%/4);
+    height: 100px;
+    margin-top: 80px;
+    text-align: center;
+}
+.partner ul > li > img{
+    display: inline-block;
+    opacity: 0.4;
+    transition: all 0.3s;
+}
+.partner ul > li > img:hover{
+    opacity: 1;
+}
+
+/* contents_contact */
+.contact{
+    width:90%;
+    padding:190px 0;
+    background:url(../images/contact.jpg) no-repeat;
+    background-size:90%;
+    background-attachment: fixed;
+    background-position: left;
+}
+.contact .inner{
+    width:1170px;
+    margin:0 auto;
+    line-height: 1.3;
+}
+.contact .inner h3{
+    font-size:17px;
+}
+.contact .inner span{
+    display: inline-block;
+    margin: 50px 0;
+    font-size:55px;
+    font-weight: bold;
+}
+.contact .inner p{
+    font-size:17px;
+}
+
+/* footer */
+footer{
+    position: relative;
+    width:100%;
+    background-color: #1b1b1b;
+}
+footer > ul{
+    padding:0 80px 80px ;
+}
+footer > ul::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+footer > ul > li{
+    float:left;
+    width:calc(100%/3);
+    color:#999;
+    text-align:center;
+}
+footer > ul > li:nth-child(2){
+    font-size:16px;
+    line-height: 2;
+    color:#eee;
+}
+footer > ul > li:nth-child(2) > span {
+    font-weight: bold;
+    margin-right: 10px;
+    color:#999;
+}
+footer > .top_arrow{
+    display:block;
+    position: absolute;
+    right:80px;
+    bottom:60px;
+}
+footer > .top_arrow > span{
+    font-size:48px;
+    color: #fff;
+}
+
+
+/* 반응형 */
+@media screen and (max-width:1200px){
+    br.mo{display:none;}
+    .contents .mainText, .project_top , .partner, .contact .inner {width:90%;}    
+    .project li > .siteText{ position: relative; width:100%; padding-bottom: 30px; font-size:20px;}
+    .project li > .siteText::after{
+        content: '⟶';
+        position: absolute;
+        display:block;
+        right:15px;
+        bottom:0;
+        font-size:18px;
+        color:#fff;
+    }
+    .project ul > li > a:hover img{ transform:scale(1);}
+    .project{padding:105px 0 60px;}
+    .partner{padding:60px 0;}
+    .contact{width:90%; background-attachment: scroll; background-position:center;  background-size:cover;}
+    footer > .top_arrow{ right: 20px; bottom: 20px;}
+}
+
+@media screen and (max-width:1024px){
+    .visual .slide li img{width:auto; right:-30px;}
+    @keyframes IMG {
+        0% { opacity: 0; right:-50px; transform: scale(0.99);}
+        100% { opacity: 1; right: -30px; }
+    }
+    .visual .slide li .txt > h3 { font-size:50px;}
+}
+
+@media screen and (max-width:768px){
+    header .innerHeader{ padding:20px 30px 0 30px; height:70px;}
+    header .innerHeader .logo { width:150px; margin-right:100px;}
+    header.on{padding:10px 0 0;}
+    header .innerHeader .headertext {line-height:60px;}
+    .gnb{padding:70px 140px 70px 70px;}
+    .visual .slide li img{width:auto; right:-65%;}
+    @keyframes IMG {
+        0% { opacity: 0; right:-80%; transform: scale(0.99);}
+        100% { opacity: 1; right: -65%; }
+    }
+    .visual .slide li .txt > h3 { font-size:40px;}
+    .contents .mainText::before{width: 80px; height: 80px; top:150px;}
+    .project ul > li { width:calc(100%/2); }
+    footer > ul{ padding:0 30px 30px ;  }
+    footer > ul >li {height:110px;}
+}
+
+@media screen and (max-width:650px){
+    body{font-size:14px;}
+    header .innerHeader{height: 55px; padding: 20px 15px 0 15px ; }
+    header .innerHeader .logo { width:120px; margin-right:0;}
+    header .innerHeader .headertext {line-height:55px;}
+    header .innerHeader .menuOpen{margin-top: 10px;  color: transparent;}
+    header .innerHeader .menuOpen > span{color: #fff;  font-size: 28px;}
+    header.on .innerHeader .headertext {opacity: 0;}
+    header.on .innerHeader{padding-top:0;}
+    .gnb { padding: 30px 140px 30px 30px; width: 70%;}
+    .gnb > .close { top:30px; right: 20px; font-size:30px;}
+    .gnb > ul > li > a { font-size:30px; }
+    .visual .slide li img{width:auto; right:-120%;}
+    @keyframes IMG {
+        0% { opacity: 0; right:-110%; transform: scale(0.99);}
+        100% { opacity: 1; right: -120%; }
+    }
+    .visual .slide li .txt > h3 { font-size:28px;}
+    .visual .slide li .txt{ font-size: 15px;}
+    .visual .slide li .scroll_btn {font-size: 12px; left: 0;}
+    @keyframes scroll {
+        0% { opacity: 0; left: -50px;}
+        30% { opacity: 0; left: -50px;}
+        100% { opacity: 1; left: 0px; }
+     }
+    .slick-arrow {width: 50px; height: 50px;}
+    .slick-arrow.slick-prev {bottom: 50px;} 
+    .contents {padding: 80px 0;}
+    .contents .mainText::before{top:80px; left:45px;}
+    .contents .mainText > span { top:30px;}
+    .contents .mainText > h3 { width:100%; }
+    .contents .mainText > p{ font-size: 20px; width: 100%; margin-top: 150px;}
+    .contents .mainText > p > span{ font-size: 18px; font-weight: 700;}
+    .project{ padding: 40px 0 0; }
+    .project_top > h3 { font-size:22px;}
+    .project_top > a{ font-size: 15px; margin-top: 30px;}
+    .project ul {width:96%; padding:0 2%;}
+    .project ul > li { width:100%; }
+    .project li > .siteText{ text-align:left;}
+    .project li > .siteText::after { bottom:30px;}
+    .partner ul > li { width:calc(100%/2); text-align: center;       
+         margin-top: 25px; height: 80px; line-height: 80px;}
+    .partner ul > li > img {width:50%;}    
+    .contact .inner {font-size: 14px;}
+    .contact .inner span{ font-size: 35px;margin: 30px 0; }
+    footer > ul > li{ width:100%; text-align:left; }
+    footer > ul > li:nth-child(2){font-size:14px;}
+    footer > .top_arrow { right: 15px; bottom: 15px; }
+    footer > .top_arrow > span { font-size:32px;}
+}
+
+        

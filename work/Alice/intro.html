@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>intro</title>
+
+ <link rel="stylesheet"    href="css/reset.css"    type="text/css">
+ <link rel="stylesheet"    href="css/index.css"    type="text/css">
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/alicescript.js"></script>
+
+</head>
+
+<body>
+<!-- header -->
+<header>
+<h1>WonderLand</h1>
+<!-- nav -->
+<nav>
+ <h1 class="hideClass"></h1>
+  <ul>
+    <li><a href="#" class="main" >MAIN</a></li>
+	<li><a href="#" class="alice">ALICE</a></li>
+	<li><a href="#" class="red">RED QUEEN </a></li>
+	<li><a href="#" class="white">WHITE QUEEN </a></li>
+	<li><a href="#" class="chapelier">LE CHAPELIER</a></li>
+   </ul>
+</nav>
+</header>
+
+
+<!-- section -->
+<section>
+<p><img src="images/rabbit.png" alt="토끼시계"></p>
+<div id="day01">
+ <dl>
+  <dt class="hideClass">현재년 </dt>
+  <dd class="userY">
+     <span class="Timer"></span>
+	 <span>년</span></dd>
+  <dt class="hideClass">현재월 </dt>
+  <dd class="userMM">
+     <span class="Timer"></span>
+	 <span>월</span></dd>	 
+  <dt class="hideClass">현재일 </dt>
+  <dd class="userD">
+     <span class="Timer"></span>
+	 <span>일</span></dd> 	 
+ </dl >
+ </div>
+ 
+ <div  id="day02">
+ <dl>
+   <dt class="hideClass">현재 시간</dt>
+  <dd class="userT">
+     <span class="Timer"></span>
+	 <span>:</span></dd>
+  <dt class="hideClass">현재 분</dt>
+  <dd class="userM">
+     <span class="Timer"></span>
+	 <span>:</span></dd>	 
+  <dt class="hideClass">현재 초</dt>
+  <dd class="userS">
+     <span class="Timer"></span>
+	 <span></span></dd> 	 
+ </dl>
+ </div>
+</section>
+
+<!-- aside -->
+<h1 class="hideClass">서브메뉴</h1>
+ 
+  <aside>
+  <ul>
+  <li><p class="alice"><a href="#"></a></p>
+  <a href="#" class="alice">Alice</a></li>
+  <li><p class="red"><a href="#"></a></p>
+  <a href="#" class="red">Red Queen</a></li>
+  <li><p class="white"><a href="#"></a></p>
+  <a href="#" class="white">White Queen</a></li>
+  <li><p class="chapelier"><a href="#"></a></p>
+  <a href="#" class="chapelier">Le Chapelier</a></li>
+  <li><p class="main"><a href="#"></a></p>
+  <a href="#" class="main">Main</a></li>
+  </ul>
+  </aside>
+
+ 
+ <!-- footer -->
+<footer>
+<div id="back01"></div>
+<p class="hideClass">&copy;copyright logo</p>
+</footer>
+
+
+
+<!-- script -->
+
+<script>
+
+
+$(function (){
+  setInterval(nowTimer,1000);
+
+ nowBack();
+
+ nowBtn();
+ 
+});
+</script>
+</body>
+</html>

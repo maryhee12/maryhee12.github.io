@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />	
+<meta charset="UTF-8">
+<title>site</title>
+<link rel="stylesheet" href="css/reset.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+</style>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+</head>
+<body>
+<!-- header -->
+<header>
+	<h1><a href="#">VOLUSPA</a></h1>
+</header>
+<!-- nav -->
+<nav>
+	<h1 class="hideClass">메인네비게이션</h1>
+	<ul>
+	<li><a href="#menu01">Amaranth &amp; Jasmine</a></li>
+	<li><a href="#menu02">Linden &amp; Dark Moss</a></li>
+	<li><a href="#menu03">Cinnamon Ceylon &amp; Copal</a></li>
+	<li><a href="#menu04">Sake Lemon Flower</a></li>
+	</ul>
+</nav>
+<div id="wrap">
+	<!-- menu01 -->
+	<section id="menu01">
+		<h1>DESCRIPTION</h1>
+		<p>Lush, rare pink jasmine mingles with Eo-infused amaranth to create the warm scent of the Voluspa Amaranth and Jasmine Scented candle. It's crafted with a coconut wax blend to ensure a clean burn every time.</p>
+		<img class="p11" src="img/fl01.png" alt="p11">
+		<img class="p12" src="img/fl01_02.png" alt="p12">
+		<img class="p13" src="img/fl03.png" alt="p13">
+		<img class="p14" src="img/fl01_02.png" alt="p14">
+		<img class="p15" src="img/fl04.png" alt="p15">
+		<img class="p16" src="img/fl02.png" alt="p16">
+	</section>
+	<!-- menu02 -->
+	<section id="menu02">
+		<h1>DESCRIPTION</h1>
+		<p>An aromatic blend of linden branch and leaf blends with water moss and warm tabac to create the Linden and Dark Moss Two-Wick Candle by Voluspa. It's crafted with a coconut wax blend to ensure a rich, clean burn.</p>
+		<img class="p21" src="img/le02_03.png" alt="p21">
+		<img class="p22" src="img/le02_06.png" alt="p22">
+	
+	</section>
+	<!-- menu03 -->
+	<section id="menu03">
+		<h1>DESCRIPTION</h1>
+		<p>The signature home collection by Voluspa gets a dazzling makeover this holiday with bright, colorful packaging that makes a statement, whether you're gifting it to a host or hostess or yourself, clean burn.</p>
+		<img class="p31" src="img/black_04.png" alt="p31">
+		<img class="p32" src="img/black_02.png" alt="p32">
+		<img class="p33" src="img/black_01.png" alt="p33">
+		<img class="p34" src="img/black_03.png" alt="p34">
+		<img class="p35" src="img/black_01.png" alt="p35"> 
+		<img class="p36" src="img/fl03_04.png" alt="p36"> 
+		<img class="p37" src="img/fl03_04.png" alt="p37"> 
+		
+	</section>
+	<!-- menu04 -->
+	<section id="menu04">
+		<h1>DESCRIPTION</h1>
+		<p>The tart lemon scent of Sake Lemon Flower Two-Wick Candle by Voluspa mingles with hints of chilled rice sake wine and is rounded out by light lemon flower for a scent that warms your heart and home. It features a coconut wax blend for an elegant, clean burn.</p>
+		<img class="p41" src="img/fl04_01.png" alt="p41">
+		<img class="p42" src="img/fl04_02.png" alt="p42">
+		<img class="p43" src="img/fl04_05.png" alt="p43">
+	</section>
+</div>
+<!-- footer -->
+<footer class="hideClass">
+&copy; copyright channel
+</footer>
+<p id="test" style="position:fixed; left:0; top:0; font-size:24px; z-index:1000">
+
+<script>
+$ ( function(){
+	var dHeight=$(window).height();
+	//$('p#test').text(dHeight);
+	$('section').css('height',dHeight+'px');
+	//$('section').height(dheight);
+	
+	$('nav a').on('click', function(){            
+   //해당 아이디
+   var secPos=$(this).attr('href');          //변수:secPos->내가 클릭한 a의 href값
+   //top수치
+   var sec=$(secPos).position().top ;   //변수:sec->내가 클릭한 a의 href값의 아이디의 세로 높이   offset(), position()
+   //스크롤
+    $('html,body').stop().animate({scrollTop:sec}, 1200, 'easeOutBounce') ;   //scrollTop->1.2초   ui->easeing
+   return false;
+ });
+ 
+	 
+//클래스 on 넣기	 
+	$(window).on('scroll' , function(){
+     var ht=$(window).height();               //변수 ht->윈도우의 세로길이
+     var dScroll=$(window).scrollTop();								//변수 dScroll ->윈도우의 스크롤 값:세로    dScroll>ht
+  //
+	if(dScroll>=0 && dScroll<ht){
+       $('nav a').removeClass('on');
+        $('nav li:eq(0)>a').addClass('on');
+	}
+//
+	if(dScroll>=ht && dScroll<ht*2){
+        $('nav a').removeClass('on');
+        $('nav li:eq(1)>a').addClass('on');
+	}
+//
+	if(dScroll>=ht*2 && dScroll<ht*3){
+      $('nav a').removeClass('on');
+        $('nav li:eq(2)>a').addClass('on');
+	}
+//
+	if(dScroll>=ht*3 && dScroll<ht*4){
+     $('nav a').removeClass('on');
+        $('nav li:eq(3)>a').addClass('on');
+	}	
+  });
+//이미지 움직이기
+ $('section').on('mousemove', function(e){
+	var posX= e.pageX;
+	var posY= e.pageY;
+	//$('p#test').text(posX);
+	$('section>img.p11').css({right:97+(posX/50),  top:30-(posY/30)});
+    $('section>img.p12').css({left:450-(posX/30) ,   top:70-(posY/30)});
+    $('section>img.p13').css({left:380+(posX/30), bottom:200+(posY/10)});	//숫자가 작을수록 많이 움직임
+	$('section>img.p14').css({right:300+(posX/20),bottom:100+(posY/50)});
+	$('section>img.p15').css({right:100+(posX/10),bottom:50+(posY/50)});
+	$('section>img.p16').css({left:550+(posX/10),bottom:80+(posY/50)});
+	
+	
+	$('section>img.p21').css({right:30+(posX/30), top:20+(posY/20)});
+	$('section>img.p22').css({right:-50-(posX/20), bottom:-100-(posY/30)});
+	$('section>img.p23').css({right:150+(posX/30), top:35+(posY/20)});
+	
+	$('section>img.p31').css({right:-30+(posX/30), top:100+(posY/20)});
+	$('section>img.p32').css({right:250-(posX/20), top:300-(posY/30)});
+	$('section>img.p33').css({left:300-(posX/30), top:100-(posY/40)});
+	$('section>img.p34').css({left:450+(posX/30), top:200-(posY/30)});
+	$('section>img.p35').css({left:400+(posX/30), bottom:100+(posY/10)});
+	$('section>img.p36').css({right:50+(posX/30), bottom:100+(posY/50)});
+	$('section>img.p37').css({left:150+(posX/30), bottom:-150+(posY/50)});
+	
+	$('section>img.p41').css({rigyht:100-(posX/30), top:50-(posY/20)});
+	$('section>img.p42').css({right:10+(posX/40), bottom:10+(posY/30)});
+	$('section>img.p43').css({right:-30+(posX/40),  bottom:-20+(posY/40)});
+	
+	
+ }); 
+ 
+ //마우스휠
+
+	$('section').on('mousewheel' , function(event, delta){
+ if(delta>0){
+    var prev=$(this).prev().offset().top;
+    $('html,body').stop().animate({scrollTop:prev}, 1200, 'easeOutBounce');
+ }	
+ 
+  if(delta<0){
+    var next=$(this).next().offset().top;
+	$('html,body').stop().animate({scrollTop:next}, 1200, 'easeOutBounce');
+ }
+	
+ });
+ 
+  
+});
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
