@@ -292,7 +292,7 @@ header::after{
     font:bold 40px/40px 'Noto Sans', sans-serif;
     color:#7C4FB8;
 }
-.portfolio .pf p{
+.portfolio .pf > p{
     float:right;
     font: 300 23px/35px 'Noto Sans KR', sans-serif;
     color:#fff; 
@@ -352,7 +352,7 @@ header::after{
 .portfolio .pf dl > dd{
     font-size: 13px;    
 }
-.projects01 li .de_co span{
+.portfolio .projects01 li .de_co span{
     position: absolute;
     top:50%;
     left:50%;
@@ -361,8 +361,8 @@ header::after{
     color:#fff;
     text-align:center;
 }
-.projects01 li a:nth-of-type(2){display:none;}
-.projects01 li:hover a:nth-of-type(2){
+.portfolio .projects01 li a:nth-of-type(2){display:none;}
+.portfolio .projects01 li:hover a:nth-of-type(2){
     display:block;
     position: absolute;
     top:0;
@@ -373,20 +373,21 @@ header::after{
     padding:0 1%;
     box-sizing: border-box;
 }
-.projects01 li:hover .over{
+.portfolio .pf p{}
+.portfolio .projects01 li:hover .over{
     position: relative;
     height:100%;
     padding:0 8%;
     text-align:center;
     border:1px solid #fff;
 }                                                                                                                                    
-.projects01 li:hover .over span{
+.portfolio .projects01 li:hover .over span{
     display:block;
     margin-top: 40px;
     font-size:15px;
     color:#fff;
 }
-.projects01 li:hover .over h3::before{
+.portfolio .projects01 li:hover .over h3::before{
     content: '';
     position: absolute;
     top:25%;
@@ -396,14 +397,16 @@ header::after{
     height:1px;
     background-color:#fff;
 }
-.projects01 li:hover .over h3{
+.portfolio .projects01 li:hover .over h3{
     margin-top:55px;
     font-size:30px;
 }
-.projects01 li:hover .over p{
+
+.portfolio .projects01 li:hover .over p{
     position: static;
     margin-top:20px;
-    font-size:16px;
+    font: 300 17px/25px 'Noto Sans KR', sans-serif;
+    color:#fff; 
 }
 .portfolio .projects01 li{
     margin-bottom:150px;
