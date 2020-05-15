@@ -80,18 +80,7 @@ export default {
             this.todolist.splice(index, 1) // 실제 배열에서의 눌린 값(starOn 에 담겨진 값)을 지우고
             this.todolist.unshift(starOn) // 담아 둔 starOn 을 배열 맨 앞에 넣는다.
         }
-        // starOff(index){
-        //   // 눌려진 star 의 불을 끌 때면
-        //     //this.todolist[index].star = 'none'
-        //     // let starOff = this.todolist[index] // 누른 star 를 starOff 에 담고
-
-        //     // let star = 0;
-        //     // for (let i=0; i < this.todolist.length; i++) {
-        //     //   if (this.todolist[i].star === 'block') star++ // 현재 배열에서 불이 켜져있는 것이 몇개인지 확인한 뒤
-        //     // }
-        //     // this.todolist.splice(index, 1) // 현재 눌린 배열을 지우고
-        //     // this.todolist.splice(star, 0, starOff) // 불이 켜져 있는것 다음에 아무것도 지우지 말고(0) 아까 담은 starOff 를 그 뒤에 넣는다.
-        // }
+     
     }
 }
 </script>
