@@ -56,12 +56,14 @@
                 <h1><a href="#">JEONGHEE</a></h1>
                 <nav>
                     <ul>
-                        <li><a href="#main">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#main" onclick="menuToggle()">Home</a></li>
+                        <li><a href="#about" onclick="menuToggle()">About</a></li>
+                        <li><a href="#portfolio" onclick="menuToggle()">Portfolio</a></li>
+                        <li><a href="#contact" onclick="menuToggle()">Contact</a></li>
                     </ul>
+                <div class="toggle" onclick="menuToggle()"></div>    
                 </nav>
+                
             </div>
         </header>
 
@@ -72,8 +74,8 @@
                     <strong>CREATIVE</strong>
                     <div class="intro_text">
                         <span> MY STORY IS ... </span>
-                        <p>CREATIVE DESIGNER<br>
-                            AND PUBLISHER</p>
+                        <p>CREATIVE PUBLISHER<br>
+                            AND FRONT-END</p>
                     </div>
                 </div>
             </section>
@@ -198,7 +200,7 @@
                             </li>
                             <li>
                                 <a href="work/vanillaJS_slider/slider_vanilla.html">
-                                    <img src="images/vanilla_slider.PNG" alt="Personal Projects08" />
+                                    <img src="images/vanilla_slider.png" alt="Personal Projects08" />
                                 </a>
                                 <dl>
                                     <dt> vanilla javascript </dt>
@@ -214,7 +216,7 @@
                             </li>
                             <li>
                                 <a href="https://awesome-benz-03027c.netlify.app/">
-                                    <img src="images/todolist.PNG" alt="Personal Projects08" />
+                                    <img src="images/todolist.png" alt="Personal Projects08" />
                                 </a>
                                 <dl>
                                     <dt> VUE 제작하고 배포한 todolist </dt>
@@ -388,6 +390,13 @@
             </address>
         </footer>    
     </div>
+
+    <script>
+        function menuToggle(){
+            const toggleMenu = document.querySelector('header');
+            toggleMenu.classList.toggle('active');
+        }    
+    </script>
 </body>
 
 </html>

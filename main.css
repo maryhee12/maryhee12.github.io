@@ -1,0 +1,1132 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Noto+Sans&family=Noto+Sans+KR:wght@300;400&family=Playfair+Display:wght@400;500&display=swap');
+
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+ blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
+* { margin: 0; 
+    padding: 0; 
+    scroll-behavior: smooth;
+}
+a {color:inherit; text-decoration: inherit;}
+li {list-style: none;}
+address, em, i { font-style: normal;}
+h1, h2, h3, h4, h5,h6 {font-size: inherit; color:#fff; }
+a:hover { text-decoration: none; color:inherit;}
+
+/* p, span{color:#fff;} */
+
+/* layout */
+body{
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header_inner {
+    padding: 0 7%;
+    height: 80px;
+
+}
+
+.header_inner h1 {
+    float: left;
+    padding: 0 20px;
+}
+
+.header_inner h1 a {
+    display: block;
+    line-height: 80px;
+    font: bold 30px/80px 'Dancing Script', cursive;
+    color: #fff;
+}
+
+.header_inner nav {
+    float: right;
+}
+
+.header_inner ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header_inner ul li {
+    float: left;
+}
+
+.header_inner ul li a {
+    display: block;
+    line-height: 80px;
+    padding: 0 30px;
+    font-size: 18px;
+    color: #fff;
+}
+.header_inner .toggle{
+  display: none;
+}
+/************************** main ***********************/
+#main {
+    position: relative;
+    max-width: 100%;
+    /* background: linear-gradient(180deg, #B24DA9, #BE4B82) fixed; */
+    height: 100vh;
+    background: #342A7C url(../images/main02.png) no-repeat 100% 100%;
+    background-size: cover;
+    /* background-color:  ; */
+}
+
+.intro {
+    height: 100vh;
+    background: url('../images/venus0.png') no-repeat left bottom;
+}
+
+.intro_text {
+    position: absolute;
+    top: 35%;
+    right: 20%;
+    transform: translateY(-35%);
+    color: #F1B6B8;
+}
+
+.intro strong {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 300px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #fff;
+    text-align: center;
+    animation: back_text 8s ease infinite;
+}
+
+/* .intro strong{
+    width:100%;
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:320px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#fff;
+    animation: back_text 8s ease infinite;
+} */
+
+@keyframes back_text {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.intro_text span {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+    animation: txt01 1s .3s both;
+    opacity: 0;
+}
+
+.intro_text p {
+    font-size: 45px;
+    animation: txt01 1s .7s both;
+    opacity: 0;
+}
+
+@keyframes txt01 {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* about */
+#about {
+    position: relative;
+    width: 100%;
+    background: url(../images/about.png) no-repeat 100% 100%;
+    background-size: cover;
+}
+
+#about .info {
+    padding: 200px 80px 0 80px;
+    /* height:100vh; */
+}
+
+#about::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#about h1::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 650px;
+    height: 2px;
+    background-color: #898989;
+    animation-name: line;
+    animation: line 5s ease infinite;
+}
+
+@keyframes line {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 630px;
+    }
+}
+
+#about {
+    padding: 150px 0;
+    background: url(../images/aboutMe.png) no-repeat 30% 35%;
+}
+
+#about h1 {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    color: #444;
+    font: 50px Playfair Display, serif;
+}
+
+#about .about_text {
+    position: relative;
+    float: left;
+    width: 40%;
+    /* height:100vh; */
+    text-align: left;
+}
+
+#about .about_text>p::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    width: 70px;
+    height: 2.5px;
+    margin-top: 10px;
+    background-color: #666;
+}
+
+#about .about_text p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font: 40px 'Noto Sans', sans-serif;
+    color: #7C4FB8;
+}
+
+#about h2 {
+    float: right;
+    padding: 0 23% 100px 0;
+    box-sizing: border-box;
+    position: relative;
+    width: 43%;
+}
+
+#about h2 img {
+    display: block;
+    width: 100%;
+}
+
+#about h2::after {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    transform: translate(5%, 5%);
+    width: 280px;
+    height: 420px;
+    border: 6px solid #7C4FB8;
+    z-index: -10;
+}
+
+#about .info::before {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#about .info dl {
+    padding: 0 20%;
+    color: #444;
+    margin-bottom: 100px;
+    font: 18px/35px 'Noto Sans', sans-serif;
+}
+
+#about .info dl::after {
+    content: '';
+    display: block;
+    clear: both;
+
+}
+
+#about .info dl>dt {
+    width: 25%;
+    float: left;
+    font-weight: bold;
+}
+
+#about .info dl>dd {
+    width: 75%;
+    float: right;
+}
+
+.skills {
+    width: 100%;
+    padding: 0 80px;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.skills ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.skills li {
+    float: left;
+    width: calc(100%/4);
+    padding: 0 1%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.skills li>span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.skills .circle {
+    position: relative;
+}
+
+.skills .circle>span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#portfolio {
+    width: 100%;
+    background-color: #000;
+}
+
+#portfolio .pf_inner {
+    padding: 10% 5%;
+}
+
+#portfolio .pf h2 {
+    float: left;
+    font: bold 40px/40px 'Noto Sans', sans-serif;
+    color: #7C4FB8;
+}
+
+#portfolio .pf >p {
+    float: right;
+    font: 300 23px/35px 'Noto Sans KR', sans-serif;
+    color: #fff;
+    /* transform: translateX(400px);   */
+
+}
+
+/* #portfolio .pf p.active{
+    transform: translateX(0);
+    transition: all .5s ease-in;
+} */
+#portfolio .pf ul {
+    clear: both;
+    padding: 10% 2% 0;
+}
+
+#portfolio .pf ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#portfolio .pf ul>li {
+    float: left;
+    width: calc(100%/4);
+    padding: 0 1.3%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#portfolio .pf ul>li * {
+    display: block;
+}
+
+#portfolio .pf ul>li img {
+    width: 100%;
+    vertical-align: top;
+    background-color: #fff;
+}
+
+.projects02 img {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+#portfolio .pf ul dl {
+    background: #fff;
+    padding: 4%;
+    color: #000;
+    text-align: center;
+}
+
+#portfolio .projects01 {
+    margin-top: 10%;
+}
+
+#portfolio .projects01 ul dl {
+    background: #222;
+    color: #fff;
+}
+
+#portfolio .pf dl>dt {
+    font: 300 17px/25px "Noto Sans KR";
+    margin-bottom: 5px;
+}
+
+#portfolio .pf dl>dd {
+    font-size: 13px;
+}
+
+#portfolio .projects01 li .de_co span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+#portfolio .projects01 li a:nth-of-type(2) {
+    display: none;
+}
+
+#portfolio .projects01 li:hover a:nth-of-type(2) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.87);
+    padding: 0 1%;
+    box-sizing: border-box;
+}
+
+#portfolio .pf p {}
+
+#portfolio .projects01 li:hover .over {
+    position: relative;
+    height: 100%;
+    padding: 0 8%;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+#portfolio .projects01 li:hover .over span {
+    display: block;
+    margin-top: 40px;
+    font-size: 15px;
+    color: #fff;
+}
+
+#portfolio .projects01 li:hover .over h3::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 50px;
+    height: 1px;
+    background-color: #fff;
+}
+
+#portfolio .projects01 li:hover .over h3 {
+    margin-top: 55px;
+    font-size: 30px;
+}
+
+#portfolio .projects01 li:hover .over p {
+    position: static;
+    margin-top: 20px;
+    font: 300 17px/25px 'Noto Sans KR', sans-serif;
+    color: #fff;
+}
+
+#portfolio .projects01 li {
+    margin-bottom: 150px;
+}
+
+/* contact */
+
+/* .contact{background:url(../images/woman.jpg) 70% 20%;} */
+#contact {
+    background: url(../images/contact.jpg) no-repeat 100% 30%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#contact fieldset {
+    border: none;
+}
+
+.contact_inner {
+    padding: 100px 20%;
+}
+
+.hideClass {
+    display: none;
+}
+
+.contact_inner h1 {
+    position: relative;
+    left: 25%;
+    bottom: 0;
+    transform: translateY(-25%);
+    margin-bottom: 56px;
+    font: 75px/85px 'Noto Sans KR', sans-serif;
+    text-align: left;
+    color: #000;
+}
+
+.contact_inner ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.contact_inner ul li {
+    width: auto;
+    padding-left: 77px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.contact_inner ul li:last-child {
+    margin-bottom: 0;
+}
+
+.contact_inner li label {
+    display: block;
+    width: 77px;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #7C4FB8 url(../images/contact_icon_01.png) no-repeat center;
+    text-indent: -9999px;
+    border-radius: 5px 0 0 5px;
+}
+
+.contact_inner li:nth-child(2)>label {
+    background-image: url(../images/contact_icon_02.png);
+}
+
+.contact_inner li:nth-child(3)>label {
+    background-image: url(../images/contact_icon_03.png);
+}
+
+.contact_inner li:nth-child(4)>label {
+    background-image: url(../images/contact_icon_04.png);
+}
+
+.contact_inner li>input {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border: none;
+    box-sizing: border-box;
+    text-indent: 10px;
+    font-size: 20px;
+}
+
+.contact_inner li>textarea {
+    display: block;
+    width: 100%;
+    height: 164px;
+    padding-top: 13px;
+    box-sizing: border-box;
+    border: none;
+    text-indent: 10px;
+    color: #a9a9a9;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contact_inner li>input[type="submit"] {
+    width: 154px;
+    text-indent: 0px;
+    background: #7C4FB8;
+    font-size: 25px;
+    float: right;
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* footer     */
+footer {
+    width: 100%;
+}
+
+footer .inner {
+    padding: 50px 80px;
+    background-color: #000;
+    color: #fff;
+}
+
+footer .inner::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+footer ul {
+    float: left;
+}
+
+footer ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+footer ul li {
+    float: left;
+    padding: 0 10px;
+}
+
+footer ul a {
+    display: block;
+}
+
+footer span {
+    float: right;
+    
+}
+
+/* ****************** 텍스트 애니메이션 *************** */
+.intro_text {}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1360px) {
+    .intro strong {
+        font-size: 200px;
+        top: 60%;
+    }
+
+    #about h2 {
+        padding: 0 20% 100px 0;
+    }
+    #about h2::after {
+        width: 235px;
+        height: 330px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .header_inner {
+        padding: 0 10%;
+    }
+
+    .header_inner ul li a {
+        padding: 0 20px;
+    }
+
+    .intro_text {
+        top: 45%;
+        right: 10%;
+        transform: translateY(-45%);
+    }
+
+    .intro strong {
+        font-size: 160px;
+        top: 60%;
+    }
+
+    #about .about_text p {
+        font-size: 30px;
+    }
+
+    #about .info {
+        padding: 200px 30px 0;
+    }
+    #about h2 {
+        padding: 0 15% 70px 0;
+    }
+
+    #about h2::after {
+        width: 235px;
+        height: 285px;
+    }
+    #about .info dl {
+        padding: 0 8%;
+        font: 15px/25px 'Noto Sans', sans-serif;
+    }
+
+    .skills {
+        padding: 0 30px;
+    }
+
+    .skills li {
+        width: calc(100%/2);
+        margin-bottom: 50px;
+    }
+
+    #portfolio .pf h2 {
+        float: none;
+        font: bold 30px/40px 'Noto Sans', sans-serif;
+    }
+
+    #portfolio .pf p {
+        float: none;
+        font: 300 20px/32px 'Noto Sans KR', sans-serif;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #portfolio .pf ul>li {
+        float: left;
+        width: calc(100%/2);
+    }
+
+    footer .inner {
+        padding: 30px 60px;
+        font-size: 12px;
+    }
+
+    footer ul li {
+        padding: 0 8px;
+    }
+
+}
+
+@media screen and (min-width:481px) and (max-width:767px) {
+    
+    .header_inner {
+        padding: 0;
+    }
+
+    .header_inner nav {
+        padding: 25px;
+    }
+
+    .header_inner nav > ul {
+        position: absolute;
+        top: 80px;
+        /* top: -100%; */
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0;
+        display: block;
+        text-align: center;
+        background-color: #F1B6B8;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+        transform: translateY(-100%);
+    }
+    header.active  .header_inner nav > ul {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .header_inner ul li {
+        float: none;
+    }
+
+    .header_inner ul li a {
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        color: #111;
+        text-transform: uppercase;
+    }
+    .header_inner ul li a:hover {
+        color: rgb(138, 32, 64);
+    }
+    .header_inner .toggle{
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 10;
+      transition: .5s;
+    }
+    .header_inner .toggle::before{    /*  */
+      content: '';
+      position: absolute;
+      top: 5px;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      box-shadow: 0 10px 0 #fff;
+      z-index: 2;
+    }
+    header.active .header_inner .toggle::before{  
+      top: 16px;    
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 #fff;
+    }
+    .header_inner .toggle::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    header.active .header_inner .toggle::after{   
+        bottom: 12px; 
+        transform: rotate(-45deg);
+        box-shadow: 0 0 0 #fff;
+    }
+    .intro_text {
+        top: 45%;
+        right: 10%;
+        transform: translateY(-45%);
+    }
+    .intro strong {
+        font-size: 110px;
+        top: 65%;
+    }
+    #about .about_text p {
+        font-size: 30px;
+    }
+
+    #about h2 {
+        padding: 0 11% 70px 0;
+    }
+
+    #about h2::after {
+        display: none;
+    }
+
+    #about .info dl {
+        padding: 0 8%;
+        font: 15px/25px 'Noto Sans', sans-serif;
+    }
+
+    .skills {
+        padding: 0 10px;
+    }
+
+    .skills li {
+        width: calc(100%/2);
+        margin-bottom: 50px;
+    }
+
+    #portfolio .pf ul>li {
+        float: left;
+        width: calc(100%/2);
+        margin-bottom: 100px;
+    }
+
+    #portfolio .pf h2 {
+        float: none;
+        font: bold 30px/40px 'Noto Sans', sans-serif;
+    }
+
+    #portfolio .pf p {
+        float: none;
+        font: 300 20px/32px 'Noto Sans KR', sans-serif;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .projects01 li .de_co span {
+        font-size: 22px;
+    }
+
+    .projects01 li:hover .over span {
+        font-size: 13px;
+        margin-top: 30px;
+    }
+
+    .projects01 li:hover .over h3::before {
+        display: none;
+    }
+
+    .projects01 li:hover .over h3 {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .projects01 li:hover .over p {
+        font-size: 14px;
+    }
+
+    footer .inner {
+        padding: 30px 60px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    footer ul li {
+        padding: 0 8px;
+        float: none;
+        display: inline-block;
+    }
+
+    footer ul {
+        float: none;
+        margin-bottom: 5px;
+    }
+
+    footer span {
+        float: none;
+        display: inline-block;
+    }
+    
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+      
+    .header_inner {
+        padding: 0;
+    }
+
+    .header_inner nav {
+        padding: 25px;
+    }
+
+    .header_inner nav > ul {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0;
+        display: block;
+        text-align: center;
+        background-color: #F1B6B8;
+        border: 1px solid red;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+    }
+    header.active  .header_inner nav > ul {
+        visibility: visible;
+        opacity: 1;
+    }
+    .header_inner ul li {
+        float: none;
+    }
+
+    .header_inner ul li a {
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        color: #111;
+        text-transform: uppercase;
+    }
+    .header_inner ul li a:hover {
+        color: rgb(138, 32, 64);
+    }
+    .header_inner .toggle{
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 10;
+      transition: .5s;
+    }
+    .header_inner .toggle::before{    /*  */
+      content: '';
+      position: absolute;
+      top: 5px;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      box-shadow: 0 10px 0 #fff;
+      z-index: 2;
+    }
+    header.active .header_inner .toggle::before{  
+      top: 16px;    
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 #fff;
+    }
+    .header_inner .toggle::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    header.active .header_inner .toggle::after{   
+        bottom: 12px; 
+        transform: rotate(-45deg);
+        box-shadow: 0 0 0 #fff;
+    }
+    .intro_text {
+        top: 40%;
+        left: 10%;
+    }
+
+    .intro strong {
+        display: none;
+    }
+
+    #about {
+        padding: 150px 0 120px;
+    }
+
+    #about .about_text p {
+        display: none;
+    }
+
+    #about h2 {
+        float: none;
+        padding: 0;
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    #about h2::after {
+        display: none;
+    }
+
+    #about .info {
+        padding: 120px 30px 0 30px;
+    }
+
+    #about .info dl {
+        padding: 0 2%;
+        font: 15px/25px 'Noto Sans', sans-serif;
+    }
+
+    .skills {
+        padding: 0 30px;
+    }
+
+    .skills li {
+        float: none;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    #portfolio .pf ul {
+        padding: 10% 1% 0;
+    }
+
+    #portfolio .pf ul>li {
+        float: left;
+        width: calc(100%/2);
+        margin-bottom: 100px;
+    }
+
+    #portfolio .pf h2 {
+        float: none;
+        font: bold 30px/40px 'Noto Sans', sans-serif;
+    }
+
+    #portfolio .pf p {
+        float: none;
+        font: 300 18px/26px 'Noto Sans KR', sans-serif;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .projects01 li .de_co span {
+        font-size: 16px;
+    }
+
+    .projects01 li:hover .over span {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    .projects01 li:hover .over h3::before {
+        display: none;
+    }
+
+    .projects01 li:hover .over h3 {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    .projects01 li:hover .over p {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .contact_inner {
+        padding: 100px 10%;
+    }
+
+    footer .inner {
+        padding: 30px 60px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    footer ul li {
+        padding: 0 8px;
+        float: none;
+        display: inline-block;
+    }
+
+    footer ul {
+        float: none;
+        margin-bottom: 5px;
+    }
+
+    footer span {
+        float: none;
+        display: inline-block;
+    }
+
+}
+
