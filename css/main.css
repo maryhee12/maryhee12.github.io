@@ -4,12 +4,16 @@
 /* reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
  blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;}
-* {margin: 0; padding: 0;}
+* { margin: 0; 
+    padding: 0; 
+    scroll-behavior: smooth;
+}
 a {color:inherit; text-decoration: inherit;}
 li {list-style: none;}
 address, em, i { font-style: normal;}
 h1, h2, h3, h4, h5,h6 {font-size: inherit; color:#fff; }
 a:hover { text-decoration: none; color:inherit;}
+
 /* p, span{color:#fff;} */
 
 /* layout */
@@ -41,7 +45,7 @@ header::after {
 
 .header_inner h1 {
     float: left;
-
+    padding: 0 20px;
 }
 
 .header_inner h1 a {
@@ -72,7 +76,9 @@ header::after {
     font-size: 18px;
     color: #fff;
 }
-
+.header_inner .toggle{
+  display: none;
+}
 /************************** main ***********************/
 #main {
     position: relative;
@@ -356,7 +362,7 @@ header::after {
     color: #7C4FB8;
 }
 
-#portfolio .pf>p {
+#portfolio .pf >p {
     float: right;
     font: 300 23px/35px 'Noto Sans KR', sans-serif;
     color: #fff;
@@ -641,6 +647,7 @@ footer ul a {
 
 footer span {
     float: right;
+    
 }
 
 /* ****************** 텍스트 애니메이션 *************** */
@@ -740,42 +747,97 @@ footer span {
 }
 
 @media screen and (min-width:481px) and (max-width:767px) {
+    
     .header_inner {
-        padding: 0 3%;
-    }
-
-    .header_inner h1 {
-        display: none;
+        padding: 0;
     }
 
     .header_inner nav {
-        float: none;
+        padding: 25px;
     }
 
-    .header_inner nav>ul {
+    .header_inner nav > ul {
+        position: absolute;
+        top: 80px;
+        /* top: -100%; */
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0;
+        display: block;
         text-align: center;
+        background-color: #F1B6B8;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+        transform: translateY(-100%);
     }
-
+    header.active  .header_inner nav > ul {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
     .header_inner ul li {
         float: none;
-        display: inline-block;
     }
 
     .header_inner ul li a {
-        font-size: 14px;
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        color: #111;
+        text-transform: uppercase;
     }
-
+    .header_inner ul li a:hover {
+        color: rgb(138, 32, 64);
+    }
+    .header_inner .toggle{
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 10;
+      transition: .5s;
+    }
+    .header_inner .toggle::before{    /*  */
+      content: '';
+      position: absolute;
+      top: 5px;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      box-shadow: 0 10px 0 #fff;
+      z-index: 2;
+    }
+    header.active .header_inner .toggle::before{  
+      top: 16px;    
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 #fff;
+    }
+    .header_inner .toggle::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    header.active .header_inner .toggle::after{   
+        bottom: 12px; 
+        transform: rotate(-45deg);
+        box-shadow: 0 0 0 #fff;
+    }
     .intro_text {
         top: 45%;
         right: 10%;
         transform: translateY(-45%);
     }
-
     .intro strong {
         font-size: 110px;
         top: 65%;
     }
-
     #about .about_text p {
         font-size: 30px;
     }
@@ -863,36 +925,91 @@ footer span {
         float: none;
         display: inline-block;
     }
+    
 
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
+      
     .header_inner {
-        padding: 0 2%;
-    }
-
-    .header_inner h1 {
-        display: none;
+        padding: 0;
     }
 
     .header_inner nav {
-        float: none;
+        padding: 25px;
     }
 
-    .header_inner nav>ul {
+    .header_inner nav > ul {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 0;
+        display: block;
         text-align: center;
+        background-color: #F1B6B8;
+        border: 1px solid red;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
     }
-
+    header.active  .header_inner nav > ul {
+        visibility: visible;
+        opacity: 1;
+    }
     .header_inner ul li {
         float: none;
-        display: inline-block;
     }
 
     .header_inner ul li a {
-        font-size: 13px;
-        padding: 0 13px;
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        color: #111;
+        text-transform: uppercase;
     }
-
+    .header_inner ul li a:hover {
+        color: rgb(138, 32, 64);
+    }
+    .header_inner .toggle{
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 10;
+      transition: .5s;
+    }
+    .header_inner .toggle::before{    /*  */
+      content: '';
+      position: absolute;
+      top: 5px;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      box-shadow: 0 10px 0 #fff;
+      z-index: 2;
+    }
+    header.active .header_inner .toggle::before{  
+      top: 16px;    
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 #fff;
+    }
+    .header_inner .toggle::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    header.active .header_inner .toggle::after{   
+        bottom: 12px; 
+        transform: rotate(-45deg);
+        box-shadow: 0 0 0 #fff;
+    }
     .intro_text {
         top: 40%;
         left: 10%;
