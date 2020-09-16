@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/circle-progress.js"></script>
@@ -60,6 +61,7 @@
                         <li><a href="#about" onclick="menuToggle()">About</a></li>
                         <li><a href="#portfolio" onclick="menuToggle()">Portfolio</a></li>
                         <li><a href="#contact" onclick="menuToggle()">Contact</a></li>
+                        <div class="underbar"></div>
                     </ul>
                 <div class="toggle" onclick="menuToggle()"></div>    
                 </nav>
@@ -347,9 +349,8 @@
                     </div>
                 </div>
             </section>
-            <section id="contact">
+            <!-- <section id="contact">
                 <div class="contact_inner">
-                    <!-- <img src="images/main_jh.png" alt="backgroundJH"/> -->
                     <form action="#" method="post">
                         <fieldset>
                             <legend class="hideClass">나에게 메일 보내기</legend>
@@ -377,7 +378,57 @@
                         </fieldset>
                     </form>
                 </div>
-            </section>
+            </section> -->
+        <section id="contact">
+            <div class="content">
+              <h2>Contact Us</h2>
+            </div>
+            <div class="container">
+              <div class="contactInfo">
+                <div class="box">
+                  <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <div class="text">
+                    <h3>Address</h3>
+                    <p>29, SEOUl SEONGBUK-GU DONNADONG</p>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                  <div class="text">
+                    <h3>Phone</h3>
+                    <p>010-9832-7981</p>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="icon"><i class="fas fa-envelope"></i></div>
+                  <div class="text">
+                    <h3>Email</h3>
+                    <p>maryhalady@naver.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contactForm">
+                <form>
+                  <h2>Send Message</h2>
+                  <div class="inputBox">
+                    <input type="text" name="" required="required">
+                    <span>Full Name</span>
+                  </div>
+                  <div class="inputBox">
+                    <input type="text" name="" required="required">
+                    <span>Email</span>
+                  </div>
+                  <div class="inputBox">
+                    <textarea required="required"></textarea>
+                    <span>Type your Message</span>
+                  </div>
+                  <div class="inputBox">
+                    <input type="submit" name="" value="Send">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
         </main>
         <footer>
             <address class="inner">
@@ -392,10 +443,25 @@
     </div>
 
     <script>
+
+        const underBar = document.querySelector('.underbar');
+        const item = document.querySelectorAll("ul li a");
+
+        function indicator(e){
+            underBar.style.left = e.offsetLeft + "px";
+            underBar.style.width = e.offsetWidth + "px";
+        }
+        item.forEach(link =>{
+            link.addEventListener('click', (e) =>{
+                indicator(e.target);
+         });
+        });
+
         function menuToggle(){
             const toggleMenu = document.querySelector('header');
             toggleMenu.classList.toggle('active');
-        }    
+        }  
+          
     </script>
 </body>
 
