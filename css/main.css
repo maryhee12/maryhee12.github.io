@@ -95,14 +95,29 @@ header::after {
     position: relative;
     max-width: 100%;
     /* background: linear-gradient(180deg, #B24DA9, #BE4B82) fixed; */
-    height: 100vh;
-    background: #342A7C url(../images/main02.png) no-repeat 100% 100%;
-    background-size: cover;
+    min-height: 100vh;  
 }
-
 .intro {
-    height: 100vh;
-    background: url('../images/venus0.png') no-repeat left bottom;
+    background-color: #F1B6B8;
+    /* background: url('../images/venus0.png') no-repeat left bottom; */
+}
+.intro::before{
+    content: '';
+    position: absolute;
+    top: -80%;
+    width: 100%;
+    height: 100%;
+    background-color: #342A7C;
+    transform: skewY(-345deg);
+    transition: .5s;
+}
+.intro:hover::before{
+    top: -50%;
+
+}
+.intro img{
+    position: relative;
+    max-width: 100%;
 }
 
 .intro_text {
@@ -115,8 +130,8 @@ header::after {
 
 .intro strong {
     position: absolute;
-    top: 42%;
     left: 50%;
+    bottom: 15%;
     transform: translateX(-50%);
     font-size: 300px;
     font-family: 'Noto Sans KR', sans-serif;
@@ -124,18 +139,6 @@ header::after {
     text-align: center;
     animation: back_text 8s ease infinite;
 }
-
-/* .intro strong{
-    width:100%;
-    position: absolute;
-    top:40%;
-    left:50%;
-    transform:translateX(-50%);
-    font-size:320px;
-    font-family: 'Noto Sans KR', sans-serif;
-    color:#fff;
-    animation: back_text 8s ease infinite;
-} */
 
 @keyframes back_text {
     0% {
@@ -681,7 +684,7 @@ footer span {
 @media screen and (min-width: 1025px) and (max-width: 1360px) {
     .intro strong {
         font-size: 200px;
-        top: 60%;
+        /* top: 60%; */
     }
 
     #about h2 {
@@ -703,14 +706,13 @@ footer span {
     }
 
     .intro_text {
-        top: 45%;
+        top: 40%;
         right: 10%;
         transform: translateY(-45%);
     }
 
     .intro strong {
         font-size: 160px;
-        top: 60%;
     }
 
     #about .about_text p {
@@ -1048,13 +1050,19 @@ footer span {
         transform: rotate(-45deg);
         box-shadow: 0 0 0 #fff;
     }
+    #main{
+        min-height: auto;
+    }
     .intro_text {
-        top: 40%;
+        top: 55%;
         left: 10%;
     }
 
     .intro strong {
         display: none;
+    }
+    .intro_text p {
+        font-size: 30px;
     }
 
     #about {
